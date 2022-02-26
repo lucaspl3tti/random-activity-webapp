@@ -26,7 +26,7 @@ The local webserver will be available under http://localhost:3000/. There you ca
 ## Include activities from you and your friends:
 To include your own activities you can go to the player.js file under "/src/stores/players.js".
 
-For every player you need to create a specific array with "export const _player_" (_player_ needs to be replaced by a key for example player1 or the name of the player).
+For every player you need to create a specific array with "export const _player_" (_player_ needs to be replaced by a key for example player1 or the name of the player). You also need to update the const "playerAmount" in line 5, to match it to the current number of player arrays.
 
 In order to add all acitivies into one array you need to open the main.js file under "src/main.js". There you have the global property "activities" in line 16. To merge all array you need to edit the players.player1.concat(). player1 must be the first array in your players.js file. Then in the () you add all other player arrays you created with "players._player_" (_player_ must be replaced by it's respective key you've given the array in your players.js file).
 

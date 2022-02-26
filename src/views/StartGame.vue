@@ -11,7 +11,7 @@ defineProps({
     <div class="start-screen">
         <div class="text-wrapper">
             <h1>random activity app</h1>
-            <p>Create an activity list together with your friends for when y'all are tripping or rolling.</p>
+            <p>Get cool activities for the evening from a list you and your friends created</p>
         </div>
 
         <div class="start-game">

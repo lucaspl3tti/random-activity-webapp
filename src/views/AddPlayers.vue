@@ -32,7 +32,7 @@ export default {
 <template>
     <div v-if="this.playerCount < this.playerAmount" class="add-players">
         <div class="text-wrapper">
-            <h1>Hello Player... </h1>
+            <h1>Hello Player {{ this.playerCount + 1 }} </h1>
             <p>Please enter your name:</p>
         </div>
         <form method="post" @submit.prevent="onSubmitPlayer">
