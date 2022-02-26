@@ -14,13 +14,18 @@ export default {
                 const playerNameInput = document.querySelector('#enterPlayerName');
                 const playerName = playerNameInput.value;
 
-                // if input value is not empty push player name to array, else put out an error
                 if (playerName != '') {
+                    // push playerName to playerList array
                     this.playerList.push(playerName);
+
+                    // reset input field and disable error
                     playerNameInput.value = '';
                     this.inputError = false;
+
+                    // add up playerCount
                     this.playerCount++;
                 } else {
+                    // show input error
                     this.inputError = true;
                 }
             }
@@ -32,7 +37,7 @@ export default {
 <template>
     <div v-if="this.playerCount < this.playerAmount" class="add-players">
         <div class="text-wrapper">
-            <h1>Hello Player {{ this.playerCount + 1 }} </h1>
+            <h1>Hello Player {{ this.playerCount + 1 }}</h1>
             <p>Please enter your name:</p>
         </div>
         <form method="post" @submit.prevent="onSubmitPlayer">

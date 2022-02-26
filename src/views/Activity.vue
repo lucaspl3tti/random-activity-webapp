@@ -1,8 +1,6 @@
 <script>
 export default {
-    mounted() {
-
-    },
+    mounted() {},
     data(){
         return {
             randomPlayer: '',
@@ -19,30 +17,40 @@ export default {
             return this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)];
         },
         onClickBtnAccept() {
+            // show accept activity container
             this.acceptTask = true;
         },
         onClickBtnDecide() {
+            // show group decision container
             this.groupDecision = true;
         },
         onClickBtnNext() {
             let activityIndex = null;
 
+            // assign key of current activity to activityIndex
             this.activities.forEach((element, key) => {
                 if (element === this.randomTask) {
                     activityIndex = key;
                 }
             });
 
+            // remove current activity from the activities array
             this.activities.splice(activityIndex, 1);
 
+            // get new random activity and new random player
             this.randomPlayer = this.playerList[Math.floor(Math.random() * this.playerList.length)];
             this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)];
+
+            // set acceptTask and groupDecision to default
             this.acceptTask = false;
             this.groupDecision = false;
         },
         onClickBtnNew() {
+            // get new random activity and new random player
             this.randomPlayer = this.playerList[Math.floor(Math.random() * this.playerList.length)];
             this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)];
+
+            // set acceptTask and groupDecision to default
             this.acceptTask = false;
             this.groupDecision = false;
         }
@@ -58,7 +66,7 @@ export default {
                 <p>Your task is:</p>
                 <p>{{ pickRandomActivity() }}</p>
             </div>
-            <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">Dew It</button>
+            <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">Do It</button>
             <button class="btn btn-primary btn-decide" @click="onClickBtnDecide">Let the group decide</button>
         </div>
 
@@ -75,7 +83,7 @@ export default {
                 <h1>You wanted the group to decide!</h1>
                 <p>Talk about it and decide together if you want to do the activity or just get a new one</p>
             </div>
-            <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">Dew It</button>
+            <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">Do It</button>
             <button class="btn btn-primary btn-next" @click="onClickBtnNew">Next Activity</button>
         </div>
     </div>

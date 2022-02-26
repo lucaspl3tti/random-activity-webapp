@@ -1,12 +1,3 @@
-<script setup>
-defineProps({
-    msg: {
-        type: String,
-        required: false
-    }
-});
-</script>
-
 <template>
     <div class="start-screen">
         <div class="text-wrapper">
