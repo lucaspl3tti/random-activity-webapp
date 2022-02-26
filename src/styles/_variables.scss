@@ -1,0 +1,50 @@
+// body colors
+$color-body: #fff;
+$color-body-dark: #000;
+
+// text colors
+$color-text: $color-body-dark;
+$color-text-light: $color-body;
+
+// Color Declaration
+$color-main: rgba(39, 24, 126, 1);
+$color-main-alt: rgba(255, 134, 0, 1);
+
+// purple color variants
+$color-purple-700: rgba(28, 20, 66, 1);
+$color-purple-600: rgba(45, 32, 105, 1);
+$color-purple-500: rgba(61, 44, 141, 1);
+$color-purple-400: rgba(78, 56, 183, 1);
+$color-purple-300: rgba(107, 87, 203, 1);
+
+// orange color variants
+$color-orange-500: rgba(255, 109, 0, 1);
+$color-orange-400: rgba(255, 121, 0, 1);
+$color-orange-300: rgba(255, 134, 0, 1);
+$color-orange-200: rgba(255, 145, 0, 1);
+$color-orange-100: rgba(255, 158, 0, 1);
+
+$color-error: #D8000C;
+
+// Typography variables
+$font-body: 'Poppins', sans-serif;
+$font-code: 'monospace';
+
+$font-size-h1: 52px;
+$font-size-h2: 42px;
+$font-size-h3: 28px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-normal: 20px;
+$font-size-small: 18px;
+$font-size-smaller: 16px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Z-Indexes
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-model: 1000;

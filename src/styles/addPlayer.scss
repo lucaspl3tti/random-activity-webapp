@@ -1,0 +1,11 @@
+@import './variables';
+
+.add-players {
+    width: 100%;
+}
+
+.error {
+    color: $color-error;
+    font-size: $font-size-smaller;
+    margin-bottom: 8px;
+}
