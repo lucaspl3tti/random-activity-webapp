@@ -84,13 +84,13 @@ export default {
                 <p>Talk about it and decide together if you want to do the activity or just get a new one</p>
             </div>
             <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">Do It</button>
-            <button class="btn btn-primary btn-next" @click="onClickBtnNew">Next Activity</button>
+            <button class="btn btn-primary btn-next" @click="onClickBtnNew">Get New Activity</button>
         </div>
     </div>
     <div v-else class="no-activities-left">
         <div class="text-wrapper">
             <h1>No activities left!</h1>
-            <p>You all did a great job! &#128158; There aren't any activities left in the list.</p>
+            <p>Y'all did a great job! &#128158; There aren't any activities left in the list.</p>
         </div>
     </div>
 </template>

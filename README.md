@@ -1,6 +1,10 @@
 # random activity app
 
-A fun game for you and your friends to get random activities for the evening from a list y'all created!
+A fun little game for you and your friends to get random activities for the evening from a list y'all created! It's relatively simple and kinda inspired by truth or dare, but with less of a forced vibe :D
+
+## Screenshots
+Here are all the different screens from the game.
+![](./screenshot.jpg)
 
 ## Recommended IDE Setup
 
