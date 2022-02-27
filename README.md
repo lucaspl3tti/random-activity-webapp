@@ -2,6 +2,9 @@
 
 A fun little game for you and your friends to get random activities for the evening from a list y'all created! It's relatively simple and kinda inspired by truth or dare, but with less of a forced vibe :D
 
+## Live Site
+The SPA can be tested with some demo data on the following website: https://random-activity-spa.netlify.app/
+
 ## Screenshots
 Here are all the different screens from the game.
 ![](./screenshot.jpg)
