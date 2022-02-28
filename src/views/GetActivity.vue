@@ -86,7 +86,7 @@ export default {
     <div v-else-if="this.acceptTask === true" class="accepted-task">
       <div class="text-wrapper">
         <h1>You accepted the activity!</h1>
-        <p>When the activity is done just press the next button</p>
+        <p>When the activity is done just press the "Next Activity" button</p>
       </div>
       <button class="btn btn-primary btn-next" @click="onClickBtnNext">
         Next Activity

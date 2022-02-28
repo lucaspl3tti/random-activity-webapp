@@ -77,8 +77,7 @@ export default {
       <div class="text-wrapper">
         <h1>Hey {{ player }}!</h1>
         <p>
-          Please add your activities to the list. If your are finished, just
-          press the "next player" button!
+          Please add your activities to the list. If your are finished, just press the "Continue with next player" button!
         </p>
       </div>
       <form method="post" @submit.prevent="onSubmitActivity">
@@ -113,7 +112,7 @@ export default {
   <div v-if="this.finishedAllPlayers == true" class="finished-all-players">
     <div class="text-wrapper">
       <h1>All players added their activities!</h1>
-      <p>To continue with the game just press the next button!</p>
+      <p>To continue with the game just press the "next" button!</p>
     </div>
     <RouterLink to="/get-activity" class="btn btn-primary btn-next"
       >Next</RouterLink

@@ -3,8 +3,7 @@
     <div class="text-wrapper">
       <h1>random activity app</h1>
       <p>
-        Get cool activities for the evening from a list you and your friends
-        created
+        Get cool activities for the evening from a list you and your friends create
       </p>
     </div>
 
@@ -13,7 +12,7 @@
         to="/start"
         class="btn btn-primary btn-start"
         id="startGameButton"
-        >Start</RouterLink
+        >Start Game</RouterLink
       >
     </div>
   </div>

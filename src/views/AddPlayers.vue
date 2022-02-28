@@ -98,7 +98,7 @@ export default {
           placeholder="Enter your name..."
         />
         <button class="btn btn-primary btn-submit-player" type="submit">
-          Register Name
+          Register Player
         </button>
       </form>
     </div>
@@ -106,7 +106,7 @@ export default {
     <div v-else class="add-players">
       <div class="text-wrapper">
         <h1>All Players added successfully</h1>
-        <p>In the next step every player can add their own activities</p>
+        <p>In the next step every player can add their own activities. Just press the "next" button</p>
       </div>
       <RouterLink to="/add-activities" class="btn btn-primary btn-next"
         >Next</RouterLink
