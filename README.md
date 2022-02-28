@@ -38,3 +38,6 @@ For every player you need to create a specific array with "export const _player_
 In order to add all acitivies into one array you need to open the main.js file under "src/main.js". There you have the global property "activities" in line 16. To merge all array you need to edit the players.player1.concat(). player1 must be the first array in your players.js file. Then in the () you add all other player arrays you created with "players._player_" (_player_ must be replaced by it's respective key you've given the array in your players.js file).
 
 After that everything is done and you can start the game under http://localhost:3000/ &#128578;
+
+## Future Updates
+In the future I want to get the app up and running on the web, so everyone can use it without downloading the project. To do that I want to add functionality, that players can add their activities at the start of the game, so they don't need to add them through player arrays.
