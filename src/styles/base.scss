@@ -71,6 +71,13 @@ body {
         border-color: $color-orange-400;
         text-decoration: none;
     }
+
+    &.btn-disabled {
+        background-color: lightgray;
+        border-color: lightgray;
+        color: $color-text-light;
+        pointer-events: none;
+    }
 }
 
 .text-wrapper {

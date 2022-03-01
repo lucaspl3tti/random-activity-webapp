@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       playerCount: 0,
+      playerActivityValue: '',
       amountOfPlayers: this.playerList.length,
       activeClass: "is-active",
       hiddenClass: "d-none",
@@ -14,28 +15,20 @@ export default {
   },
   methods: {
     onSubmitActivity() {
-      // get activity input value
-      const activityInput = document.querySelector(
-        "#enterPlayerActivity-" + this.playerCount
-      );
-      const activityInputValue = activityInput.value;
-
-      if (activityInputValue != "") {
+      if (this.playerActivityValue != "") {
         // push activity into the array
-        this.activities.push(activityInputValue);
+        this.activities.push(this.playerActivityValue);
 
         // add up activity counter
         this.activityCounter++;
 
         // reset input field and disable error
-        activityInput.value = "";
+        this.playerActivityValue = '';
         this.inputError = false;
       } else {
         // show input error
         this.inputError = true;
       }
-
-      console.log(this.activityCounter);
     },
     onClickNextPlayer() {
       if (
@@ -50,12 +43,6 @@ export default {
 
         // set error notification to default
         this.activityError = false;
-      } else if (
-        this.activityCounter > 1 &&
-        this.playerCount == this.amountOfPlayers - 1
-      ) {
-        this.finishedAllPlayers = true;
-        this.playerCount = -1;
       } else {
         // show error
         this.activityError = true;
@@ -69,7 +56,7 @@ export default {
 <template>
   <div
     v-for="(player, key) in this.playerList"
-    :key="key"
+    :key="player"
     class="add-activities"
     :class="[this.playerCount == key ? activeClass : hiddenClass]"
   >
@@ -77,7 +64,7 @@ export default {
       <div class="text-wrapper">
         <h1>Hey {{ player }}!</h1>
         <p>
-          Please add your activities to the list. If your are finished, just press the "Continue with next player" button!
+          Please add your activities to the list. You need to add at least two! If your are finished, just press the "Continue with next player" button!
         </p>
       </div>
       <form method="post" @submit.prevent="onSubmitActivity">
@@ -87,11 +74,11 @@ export default {
         <input
           type="text"
           class="form-control"
-          name="addActivity"
           :id="`enterPlayerActivity-${key}`"
           placeholder="Your activity..."
+          v-model="playerActivityValue"
         />
-        <button type="submit" class="btn btn-primary btn-add-activity">
+        <button type="submit" class="btn btn-primary btn-add-activity" :class="[playerActivityValue == '' ? 'btn-disabled' : '']">
           Add Activity to the list
         </button>
       </form>
@@ -101,22 +88,19 @@ export default {
         </p>
         <button
           class="btn btn-primary btn-next-player"
+          v-show="this.activityCounter > 1 && this.playerCount < this.amountOfPlayers - 1"
           @click="onClickNextPlayer"
         >
           Continue with next Player
         </button>
+        <RouterLink
+            to="/get-activity"
+            v-show="this.activityCounter > 1 && this.playerCount == this.amountOfPlayers - 1"
+            class="btn btn-primary btn-next">
+            Start the game!
+        </RouterLink>
       </div>
     </div>
-  </div>
-
-  <div v-if="this.finishedAllPlayers == true" class="finished-all-players">
-    <div class="text-wrapper">
-      <h1>All players added their activities!</h1>
-      <p>To continue with the game just press the "next" button!</p>
-    </div>
-    <RouterLink to="/get-activity" class="btn btn-primary btn-next"
-      >Next</RouterLink
-    >
   </div>
 </template>
 

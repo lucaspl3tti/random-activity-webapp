@@ -12,7 +12,7 @@
         to="/start"
         class="btn btn-primary btn-start"
         id="startGameButton"
-        >Start Game</RouterLink
+        >Let's begin!</RouterLink
       >
     </div>
   </div>
