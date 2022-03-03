@@ -4,6 +4,8 @@ export default {
   data() {
     return {
       playerCount: 0,
+      playerAmountValue: '',
+      playerName: '',
       inputError: false,
       amountError: false,
       addPlayers: false,
@@ -11,11 +13,8 @@ export default {
   },
   methods: {
     onSubmitAmount() {
-      const playerAmountInput = document.querySelector("#enterPlayerAmount");
-      let playerAmountValue = playerAmountInput.value;
-
-      if (playerAmountValue != "" && playerAmountValue > 1) {
-        this.playerAmount = playerAmountValue;
+      if (this.playerAmountValue != "" && this.playerAmountValue > 1) {
+        this.playerAmount = this.playerAmountValue;
         this.addPlayers = true;
       } else {
         this.amountError = true;
@@ -23,16 +22,12 @@ export default {
     },
     onSubmitPlayer() {
       if (this.playerCount < this.playerAmount) {
-        // get player name
-        const playerNameInput = document.querySelector("#enterPlayerName");
-        const playerName = playerNameInput.value;
-
-        if (playerName != "") {
+        if (this.playerName != '') {
           // push playerName to playerList array
-          this.playerList.push(playerName);
+          this.playerList.push(this.playerName);
 
           // reset input field and disable error
-          playerNameInput.value = "";
+          this.playerName = '';
           this.inputError = false;
 
           // add up playerCount
@@ -64,13 +59,14 @@ export default {
           You need at least two players!
         </p>
         <input
-          type="text"
+          type="number"
           class="form-control"
           name="playerAmount"
           id="enterPlayerAmount"
           placeholder="2"
+          v-model="playerAmountValue"
         />
-        <button type="submit" class="btn btn-primary btn-add-amount">
+        <button type="submit" class="btn btn-primary btn-add-amount" :class="[playerAmountValue < 2 ? 'btn-disabled' : '']">
           Add Player Amount
         </button>
       </form>
@@ -96,8 +92,9 @@ export default {
           name="name"
           id="enterPlayerName"
           placeholder="Enter your name..."
+          v-model="playerName"
         />
-        <button class="btn btn-primary btn-submit-player" type="submit">
+        <button class="btn btn-primary btn-submit-player" :class="[playerName == '' ? 'btn-disabled' : '']" type="submit">
           Register Player
         </button>
       </form>

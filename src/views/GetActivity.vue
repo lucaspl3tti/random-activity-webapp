@@ -72,8 +72,11 @@ export default {
     >
       <div class="text-wrapper">
         <h1>Player {{ pickRandomPlayer() }}, it's your turn!</h1>
-        <p>Your task is:</p>
-        <p>{{ pickRandomActivity() }}</p>
+        <p>
+            Your Activity is:<br/>
+            {{ pickRandomActivity() }}
+        </p>
+        <p>Do you want to do the activity with your group?<br/> Or aren't you sure and wanna let the group decide?</p>
       </div>
       <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">
         Do It
@@ -96,10 +99,7 @@ export default {
     <div v-else-if="this.groupDecision === true" class="group-decision">
       <div class="text-wrapper">
         <h1>You wanted the group to decide!</h1>
-        <p>
-          Talk about it and decide together if you want to do the activity or
-          just get a new one
-        </p>
+        <p>Talk about it and decide together if you want to do the activity or just get a new one</p>
       </div>
       <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">
         Do It
@@ -112,10 +112,7 @@ export default {
   <div v-else class="no-activities-left">
     <div class="text-wrapper">
       <h1>No activities left!</h1>
-      <p>
-        Y'all did a great job! &#128158; There aren't any activities left in the
-        list.
-      </p>
+      <p>Y'all did a great job! &#128158; There aren't any activities left in the list.</p>
     </div>
   </div>
 </template>
