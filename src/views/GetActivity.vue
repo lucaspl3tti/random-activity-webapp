@@ -11,12 +11,10 @@ export default {
   },
   methods: {
     pickRandomPlayer() {
-      return (this.randomPlayer =
-        this.playerList[Math.floor(Math.random() * this.playerList.length)]);
+      return (this.randomPlayer = this.playerList[Math.floor(Math.random() * this.playerList.length)]);
     },
     pickRandomActivity() {
-      return (this.randomTask =
-        this.activities[Math.floor(Math.random() * this.activities.length)]);
+      return (this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)]);
     },
     onClickBtnAccept() {
       // show accept activity container
@@ -40,10 +38,8 @@ export default {
       this.activities.splice(activityIndex, 1);
 
       // get new random activity and new random player
-      this.randomPlayer =
-        this.playerList[Math.floor(Math.random() * this.playerList.length)];
-      this.randomTask =
-        this.activities[Math.floor(Math.random() * this.activities.length)];
+      this.randomPlayer = this.playerList[Math.floor(Math.random() * this.playerList.length)];
+      this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)];
 
       // set acceptTask and groupDecision to default
       this.acceptTask = false;
@@ -51,10 +47,8 @@ export default {
     },
     onClickBtnNew() {
       // get new random activity and new random player
-      this.randomPlayer =
-        this.playerList[Math.floor(Math.random() * this.playerList.length)];
-      this.randomTask =
-        this.activities[Math.floor(Math.random() * this.activities.length)];
+      this.randomPlayer = this.playerList[Math.floor(Math.random() * this.playerList.length)];
+      this.randomTask = this.activities[Math.floor(Math.random() * this.activities.length)];
 
       // set acceptTask and groupDecision to default
       this.acceptTask = false;
@@ -76,7 +70,7 @@ export default {
             Your Activity is:<br/>
             {{ pickRandomActivity() }}
         </p>
-        <p>Do you want to do the activity with your group?<br/> Or aren't you sure and wanna let the group decide?</p>
+        <p>Do you want to do the activity with your group?<br/> Or aren't you sure and wanna let the others decide?</p>
       </div>
       <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">
         Do It
@@ -98,7 +92,7 @@ export default {
 
     <div v-else-if="this.groupDecision === true" class="group-decision">
       <div class="text-wrapper">
-        <h1>You wanted the group to decide!</h1>
+        <h1>You wanted the others to decide!</h1>
         <p>Talk about it and decide together if you want to do the activity or just get a new one</p>
       </div>
       <button class="btn btn-primary btn-accept" @click="onClickBtnAccept">

@@ -13,30 +13,25 @@ export default {
   },
   methods: {
     onSubmitAmount() {
-      if (this.playerAmountValue != "" && this.playerAmountValue > 1) {
-        this.playerAmount = this.playerAmountValue;
-        this.addPlayers = true;
-      } else {
-        this.amountError = true;
-      }
+      if (this.playerAmountValue == '' && this.playerAmountValue <= 1) return this.amountError = true;
+
+      this.playerAmount = this.playerAmountValue;
+      this.addPlayers = true;
     },
     onSubmitPlayer() {
-      if (this.playerCount < this.playerAmount) {
-        if (this.playerName != '') {
-          // push playerName to playerList array
-          this.playerList.push(this.playerName);
+      if (this.playerCount >= this.playerAmount) return
 
-          // reset input field and disable error
-          this.playerName = '';
-          this.inputError = false;
+      if (this.playerName == '') return his.inputError = true;
 
-          // add up playerCount
-          this.playerCount++;
-        } else {
-          // show input error
-          this.inputError = true;
-        }
-      }
+      // push playerName to playerList array
+      this.playerList.push(this.playerName);
+
+      // reset input field and disable error
+      this.playerName = '';
+      this.inputError = false;
+
+      // add up playerCount
+      this.playerCount++;
     },
   },
 };
