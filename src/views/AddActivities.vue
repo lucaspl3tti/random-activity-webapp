@@ -15,38 +15,30 @@ export default {
   },
   methods: {
     onSubmitActivity() {
-      if (this.playerActivityValue != "") {
-        // push activity into the array
-        this.activities.push(this.playerActivityValue);
+      if (this.playerActivityValue == '') return this.inputError = true;
 
-        // add up activity counter
-        this.activityCounter++;
+      // push activity into the array
+      this.activities.push(this.playerActivityValue);
 
-        // reset input field and disable error
-        this.playerActivityValue = '';
-        this.inputError = false;
-      } else {
-        // show input error
-        this.inputError = true;
-      }
+      // add up activity counter
+      this.activityCounter++;
+
+      // reset input field and disable error
+      this.playerActivityValue = '';
+      this.inputError = false;
     },
     onClickNextPlayer() {
-      if (
-        this.activityCounter > 1 &&
-        this.playerCount < this.amountOfPlayers - 1
-      ) {
-        // go next player
-        this.playerCount++;
+      if (this.activityCounter <= 1 && this.playerCount >= this.amountOfPlayers - 1)
+        return this.activityError = true;
 
-        // reset activityCounter to default
-        this.activityCounter = 0;
+      // go next player
+      this.playerCount++;
 
-        // set error notification to default
-        this.activityError = false;
-      } else {
-        // show error
-        this.activityError = true;
-      }
+      // reset activityCounter to default
+      this.activityCounter = 0;
+
+      // set error notification to default
+      this.activityError = false;
     },
   },
   mounted() {},
