@@ -15,7 +15,8 @@ export default {
   },
   methods: {
     onSubmitActivity() {
-      if (this.playerActivityValue == '') return this.inputError = true;
+      if (this.playerActivityValue == '')
+        return this.inputError = true;
 
       // push activity into the array
       this.activities.push(this.playerActivityValue);

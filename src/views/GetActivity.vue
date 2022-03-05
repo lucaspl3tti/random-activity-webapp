@@ -29,9 +29,7 @@ export default {
 
       // assign key of current activity to activityIndex
       this.activities.forEach((element, key) => {
-        if (element === this.randomTask) {
-          activityIndex = key;
-        }
+        if (element === this.randomTask) activityIndex = key;
       });
 
       // remove current activity from the activities array
