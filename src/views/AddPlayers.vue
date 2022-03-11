@@ -21,7 +21,7 @@ export default {
     onSubmitPlayer() {
       if (this.playerCount >= this.playerAmount) return
 
-      if (this.playerName == '') return his.inputError = true;
+      if (this.playerName == '') return this.inputError = true;
 
       // push playerName to playerList array
       this.playerList.push(this.playerName);
